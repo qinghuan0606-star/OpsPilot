@@ -1,0 +1,36 @@
+services:
+  api:
+    build: .
+    container_name: opspilot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: opspilot
+      APP_ENV: production
+      LOG_LEVEL: INFO
+      DATABASE_URL: sqlite+aiosqlite:///./data/local/app.db
+      # 默认演示不启动 Redis / Qdrant：检索缓存与向量库走内存实现。
+      REDIS_URL: ""
+      QDRANT_URL: ""
+      QDRANT_COLLECTION: ops_knowledge
+      # 无 Redis 时确认存储必须显式 disabled；不能静默降级到进程内 dict。
+      PENDING_STORE_BACKEND: disabled
+      # 全部运维工具使用仓库内 Mock 数据，不连接真实主机。
+      OPS_TOOL_BACKEND: mock
+      OPS_ENABLE_WRITE_TOOLS: "false"
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      LOCAL_EMBEDDING_ENABLED: "false"
+      CROSS_ENCODER_ENABLED: "false"
+      UNSTRUCTURED_ENABLED: "false"
+    volumes:
+      - opspilot-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+volumes:
+  opspilot-data:

@@ -1,0 +1,622 @@
+{
+  "host_id": "lab-node-1",
+  "hostname": "lab-node-1",
+  "note": "模拟数据：openEuler 24.03 实验节点，用于演示 nginx RPM 升级后启动失败，不对应任何真实主机",
+  "labels": [
+    "openEuler",
+    "manual_fixture",
+    "simulated"
+  ],
+  "os": {
+    "name": "openEuler",
+    "version": "24.03 LTS-SP1",
+    "kernel": "6.6.0-28.0.0.31.oe2403.x86_64",
+    "arch": "x86_64",
+    "vendor": "openEuler community"
+  },
+  "uptime": "up 6 days, 4:12",
+  "resources": {
+    "cpu": {
+      "cores": 4,
+      "load_1": 2.31,
+      "load_5": 1.98,
+      "load_15": 1.42,
+      "usage_pct": 68.4,
+      "iowait_pct": 3.2
+    },
+    "memory": {
+      "total_kb": 8123456,
+      "available_kb": 1987654,
+      "usage_pct": 75.5,
+      "swap_used_kb": 65536
+    },
+    "top_processes": [
+      {
+        "pid": 1180,
+        "user": "nginx",
+        "name": "nginx",
+        "cpu_pct": 12.4,
+        "mem_pct": 3.1
+      },
+      {
+        "pid": 2048,
+        "user": "root",
+        "name": "java",
+        "cpu_pct": 31.7,
+        "mem_pct": 22.8
+      },
+      {
+        "pid": 412,
+        "user": "root",
+        "name": "systemd-journald",
+        "cpu_pct": 1.2,
+        "mem_pct": 1.4
+      }
+    ]
+  },
+  "disks": [
+    {
+      "mount": "/",
+      "fs_type": "xfs",
+      "size_kb": 52428800,
+      "used_kb": 41943040,
+      "avail_kb": 10485760,
+      "use_pct": 80.0
+    },
+    {
+      "mount": "/var",
+      "fs_type": "xfs",
+      "size_kb": 10485760,
+      "used_kb": 4194304,
+      "avail_kb": 6291456,
+      "use_pct": 40.0
+    },
+    {
+      "mount": "/boot",
+      "fs_type": "ext4",
+      "size_kb": 1048576,
+      "used_kb": 209715,
+      "avail_kb": 839009,
+      "use_pct": 20.0
+    }
+  ],
+  "inode_use_pct": 12.3,
+  "packages": [
+    {
+      "name": "nginx",
+      "epoch": "0",
+      "version": "1.26.1",
+      "release": "1.oe2403",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "BSD-2-Clause",
+      "vendor": "openEuler",
+      "install_time": "2026-11-16T09:08:11+08:00",
+      "size_kb": 1740,
+      "requires": [
+        "openssl-libs >= 1:3.0.7",
+        "systemd >= 253",
+        "zlib"
+      ],
+      "provides": [
+        "webserver",
+        "nginx = 1.26.1-1.oe2403"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "1.26.1-1.oe2403",
+        "1.24.0-2.oe2403"
+      ]
+    },
+    {
+      "name": "nginx-mod-http-geoip",
+      "epoch": "0",
+      "version": "1.20.1",
+      "release": "16.oe2403",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "BSD-2-Clause",
+      "vendor": "openEuler",
+      "install_time": "2025-04-02T11:20:00+08:00",
+      "size_kb": 96,
+      "requires": [
+        "nginx = 1.20.1-16.oe2403",
+        "GeoIP"
+      ],
+      "provides": [
+        "nginx-mod-http-geoip = 1.20.1-16.oe2403"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "1.20.1-16.oe2403"
+      ]
+    },
+    {
+      "name": "openssl-libs",
+      "epoch": "1",
+      "version": "3.0.7",
+      "release": "25.oe2403",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "Apache-2.0",
+      "vendor": "openEuler",
+      "install_time": "2026-10-30T16:41:00+08:00",
+      "requires": [
+        "glibc >= 2.34"
+      ],
+      "provides": [
+        "libssl.so.3",
+        "libcrypto.so.3"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "3.0.7-25.oe2403",
+        "3.0.8-3.oe2403"
+      ]
+    },
+    {
+      "name": "systemd",
+      "epoch": "0",
+      "version": "255",
+      "release": "18.oe2403",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "LGPL-2.1-or-later",
+      "vendor": "openEuler",
+      "install_time": "2026-06-11T09:00:00+08:00",
+      "requires": [
+        "glibc >= 2.34",
+        "libcap"
+      ],
+      "provides": [
+        "systemd"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "255-18.oe2403"
+      ]
+    },
+    {
+      "name": "supervisor",
+      "epoch": "0",
+      "version": "4.2.5",
+      "release": "3.oe2403",
+      "arch": "noarch",
+      "state": "installed",
+      "license": "BSD-derived",
+      "vendor": "openEuler",
+      "install_time": "2026-03-18T10:12:00+08:00",
+      "requires": [
+        "python3 >= 3.9"
+      ],
+      "provides": [
+        "supervisord"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "4.2.5-3.oe2403"
+      ]
+    }
+  ],
+  "dependency_issues": {
+    "nginx": {
+      "missing": [
+        "nginx-mod-http-geoip = 1.26.1-1.oe2403",
+        "GeoIP (libGeoIP.so.1)"
+      ],
+      "conflicts": [
+        "nginx-mod-http-geoip-1.20.1-16.oe2403 requires nginx = 1.20.1-16.oe2403"
+      ],
+      "satisfied": [
+        "openssl-libs >= 1:3.0.7",
+        "systemd >= 253",
+        "zlib"
+      ],
+      "broken_by": [
+        "nginx-mod-http-geoip-1.20.1-16.oe2403"
+      ],
+      "stale_files": [
+        "/usr/lib64/nginx/modules/ngx_http_geoip_module.so"
+      ],
+      "repo_available": false,
+      "note": "升级 nginx 到 1.26.1 时未同步升级 geoip 模块包，旧模块 .so 仍在模块目录且依赖已移除的 libGeoIP.so.1；镜像仓库当前未提供匹配版本的 nginx-mod-http-geoip"
+    },
+    "nginx-mod-http-geoip": {
+      "missing": [
+        "nginx = 1.20.1-16.oe2403"
+      ],
+      "conflicts": [
+        "与已安装的 nginx 1.26.1 版本不匹配"
+      ],
+      "satisfied": [],
+      "broken_by": [],
+      "stale_files": [],
+      "repo_available": false,
+      "note": "该模块包被旧版本 nginx 锁定，需升级或移除后再启动 nginx"
+    }
+  },
+  "services": {
+    "nginx": {
+      "manager": "systemd",
+      "state": "failed",
+      "since": "2026-11-16T09:12:03+08:00",
+      "pid": null,
+      "exit_code": 1,
+      "restart_count": 3,
+      "unit_path": "/usr/lib/systemd/system/nginx.service",
+      "result": "exit-code",
+      "last_error": "Failed to start nginx.service: Control process exited, code=exited, status=1/FAILURE",
+      "enabled": true,
+      "last_start_at": "2026-11-16T09:12:03+08:00",
+      "last_failure_at": "2026-11-16T09:12:03+08:00",
+      "restart_events": [
+        {
+          "at": "2026-11-16T09:11:51+08:00",
+          "result": "failure",
+          "exit_code": 1,
+          "reason": "start-limit-hit after module load failure"
+        },
+        {
+          "at": "2026-11-16T09:11:57+08:00",
+          "result": "failure",
+          "exit_code": 1,
+          "reason": "control process exited with status=1/FAILURE"
+        },
+        {
+          "at": "2026-11-16T09:12:03+08:00",
+          "result": "failure",
+          "exit_code": 1,
+          "reason": "control process exited with status=1/FAILURE"
+        }
+      ],
+      "stop_reason": "control process exited, status=1/FAILURE",
+      "exec_start": "/usr/sbin/nginx -c /etc/nginx/nginx.conf",
+      "restart_policy": "on-failure",
+      "unit_config": {
+        "Unit": "nginx.service",
+        "ExecStart": "/usr/sbin/nginx -c /etc/nginx/nginx.conf",
+        "Restart": "on-failure",
+        "RestartSec": "100ms",
+        "User": "root",
+        "LimitNOFILE": "65535"
+      }
+    },
+    "sshd": {
+      "manager": "systemd",
+      "state": "active",
+      "since": "2026-11-10T08:01:12+08:00",
+      "pid": 812,
+      "exit_code": 0,
+      "restart_count": 0,
+      "unit_path": "/usr/lib/systemd/system/sshd.service",
+      "result": "success",
+      "last_error": "",
+      "enabled": true,
+      "last_start_at": "2026-11-10T08:01:12+08:00",
+      "last_failure_at": "",
+      "restart_events": [],
+      "stop_reason": "",
+      "exec_start": "/usr/sbin/sshd -D $OPTIONS",
+      "restart_policy": "always",
+      "unit_config": {
+        "Unit": "sshd.service",
+        "ExecStart": "/usr/sbin/sshd -D $OPTIONS",
+        "Restart": "always",
+        "RestartSec": "100ms"
+      }
+    },
+    "app-worker": {
+      "manager": "supervisor",
+      "state": "failed",
+      "since": "2026-11-16T09:15:40+08:00",
+      "pid": null,
+      "exit_code": 2,
+      "restart_count": 5,
+      "unit_path": "/etc/supervisord.d/app-worker.ini",
+      "result": "exit-code",
+      "last_error": "Exited too quickly (process log may have details)",
+      "enabled": true,
+      "last_start_at": "2026-11-16T09:15:40+08:00",
+      "last_failure_at": "2026-11-16T09:15:40+08:00",
+      "restart_events": [
+        {
+          "at": "2026-11-16T09:11:40+08:00",
+          "result": "failure",
+          "exit_code": 2,
+          "reason": "Exited too quickly (process log may have details)"
+        },
+        {
+          "at": "2026-11-16T09:12:40+08:00",
+          "result": "failure",
+          "exit_code": 2,
+          "reason": "Exited too quickly (process log may have details)"
+        },
+        {
+          "at": "2026-11-16T09:13:40+08:00",
+          "result": "failure",
+          "exit_code": 2,
+          "reason": "Exited too quickly (process log may have details)"
+        },
+        {
+          "at": "2026-11-16T09:14:40+08:00",
+          "result": "failure",
+          "exit_code": 2,
+          "reason": "Exited too quickly (process log may have details)"
+        },
+        {
+          "at": "2026-11-16T09:15:40+08:00",
+          "result": "failure",
+          "exit_code": 2,
+          "reason": "Exited too quickly (process log may have details)"
+        }
+      ],
+      "stop_reason": "Exited too quickly (process log may have details)",
+      "exec_start": "/usr/bin/python3 /opt/app/worker.py --queue default",
+      "restart_policy": "autorestart=unexpected"
+    }
+  },
+  "logs": {
+    "nginx": [
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "info",
+        "unit": "systemd",
+        "pid": 2288,
+        "msg": "Starting nginx.service - nginx web server..."
+      },
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "emerg",
+        "unit": "nginx",
+        "pid": 2311,
+        "msg": "dlopen() \"/usr/lib64/nginx/modules/ngx_http_geoip_module.so\" failed (libGeoIP.so.1: cannot open shared object file: No such file or directory)"
+      },
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "emerg",
+        "unit": "nginx",
+        "pid": 2311,
+        "msg": "module \"/usr/lib64/nginx/modules/ngx_http_geoip_module.so\" is not binary compatible"
+      },
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "err",
+        "unit": "systemd",
+        "pid": 2288,
+        "msg": "nginx.service: Control process exited, code=exited, status=1/FAILURE"
+      },
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "err",
+        "unit": "systemd",
+        "pid": 2288,
+        "msg": "nginx.service: Failed with result 'exit-code'."
+      },
+      {
+        "ts": "2026-11-16T09:12:03+08:00",
+        "level": "info",
+        "unit": "systemd",
+        "pid": 2288,
+        "msg": "Failed to start nginx.service - nginx web server."
+      }
+    ],
+    "app-worker": [
+      {
+        "ts": "2026-11-16T09:15:40+08:00",
+        "level": "err",
+        "unit": "supervisord",
+        "pid": 3311,
+        "msg": "app-worker: Exited too quickly (process log may have details)"
+      },
+      {
+        "ts": "2026-11-16T09:15:40+08:00",
+        "level": "warn",
+        "unit": "supervisord",
+        "pid": 3311,
+        "msg": "app-worker entered FATAL state, too many start retries too quickly"
+      }
+    ],
+    "sshd": [
+      {
+        "ts": "2026-11-16T08:41:10+08:00",
+        "level": "info",
+        "unit": "sshd",
+        "pid": 812,
+        "msg": "Server listening on 0.0.0.0 port 22."
+      }
+    ]
+  },
+  "supervisor": {
+    "programs": {
+      "app-worker": {
+        "service": "app-worker",
+        "config_path": "/etc/supervisord.d/app-worker.ini",
+        "command": "/usr/bin/python3 /opt/app/worker.py --queue default",
+        "directory": "/opt/app",
+        "user": "app",
+        "autostart": true,
+        "autorestart": "unexpected",
+        "startsecs": 2,
+        "startretries": 5,
+        "stopwaitsecs": 10,
+        "stdout_logfile": "/var/log/supervisor/app-worker-stdout.log",
+        "stderr_logfile": "/var/log/supervisor/app-worker-stderr.log",
+        "config": {
+          "program:app-worker": {
+            "command": "/usr/bin/python3 /opt/app/worker.py --queue default",
+            "directory": "/opt/app",
+            "autostart": "true",
+            "autorestart": "unexpected",
+            "startsecs": 2,
+            "startretries": 5,
+            "stopwaitsecs": 10
+          }
+        }
+      }
+    }
+  },
+  "elasticsearch": {
+    "available": true,
+    "cluster": "ops-lab-es",
+    "endpoint": "http://es.internal:9200",
+    "documents": [
+      {
+        "@timestamp": "2026-11-16T09:00:12+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-api",
+        "level": "INFO",
+        "message": "request completed path=/health status=200",
+        "error_type": "",
+        "trace_id": "tr-001"
+      },
+      {
+        "@timestamp": "2026-11-16T09:11:51+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "nginx",
+        "level": "ERROR",
+        "message": "nginx: [emerg] dlopen() \"/usr/lib64/nginx/modules/ngx_http_geoip_module.so\" failed (libGeoIP.so.1: cannot open shared object file: No such file or directory)",
+        "error_type": "NginxModuleLoadError",
+        "trace_id": ""
+      },
+      {
+        "@timestamp": "2026-11-16T09:11:57+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "nginx",
+        "level": "ERROR",
+        "message": "nginx: [emerg] module \"/usr/lib64/nginx/modules/ngx_http_geoip_module.so\" is not binary compatible",
+        "error_type": "NginxModuleLoadError",
+        "trace_id": ""
+      },
+      {
+        "@timestamp": "2026-11-16T09:12:03+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "nginx",
+        "level": "ERROR",
+        "message": "nginx.service: Control process exited, code=exited, status=1/FAILURE",
+        "error_type": "ServiceStartFailure",
+        "trace_id": ""
+      },
+      {
+        "@timestamp": "2026-11-16T09:12:03+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "app-worker: Exited too quickly (process log may have details)",
+        "error_type": "SupervisorStartFailure",
+        "trace_id": "tr-002"
+      },
+      {
+        "@timestamp": "2026-11-16T09:13:10+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "Could not connect to PostgreSQL at db.internal:5432: connection refused",
+        "error_type": "DatabaseConnectionError",
+        "trace_id": "tr-003"
+      },
+      {
+        "@timestamp": "2026-11-16T09:13:40+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "java.lang.NullPointerException at WorkerBootstrap.java:87",
+        "error_type": "NullPointerException",
+        "trace_id": "tr-004"
+      },
+      {
+        "@timestamp": "2026-11-16T09:14:10+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "Could not connect to PostgreSQL at db.internal:5432: connection refused",
+        "error_type": "DatabaseConnectionError",
+        "trace_id": "tr-005"
+      },
+      {
+        "@timestamp": "2026-11-16T09:14:40+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "Retry budget exhausted for queue=default attempts=3",
+        "error_type": "RetryBudgetExhausted",
+        "trace_id": "tr-006"
+      },
+      {
+        "@timestamp": "2026-11-16T09:15:10+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "Could not connect to PostgreSQL at db.internal:5432: connection refused",
+        "error_type": "DatabaseConnectionError",
+        "trace_id": "tr-007"
+      },
+      {
+        "@timestamp": "2026-11-16T09:15:40+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-worker",
+        "level": "ERROR",
+        "message": "app-worker entered FATAL state after 5 start retries",
+        "error_type": "SupervisorStartFailure",
+        "trace_id": "tr-008"
+      },
+      {
+        "@timestamp": "2026-11-16T09:16:00+08:00",
+        "index": "app-logs-2026.11.16",
+        "service": "app-api",
+        "level": "WARN",
+        "message": "downstream latency p99=812ms threshold=500ms",
+        "error_type": "LatencyWarning",
+        "trace_id": "tr-009"
+      },
+      {
+        "@timestamp": "2026-11-15T22:31:00+08:00",
+        "index": "app-logs-2026.11.15",
+        "service": "app-api",
+        "level": "ERROR",
+        "message": "java.sql.SQLTransientConnectionException: HikariPool-1 connection timeout",
+        "error_type": "DatabaseConnectionError",
+        "trace_id": "tr-010"
+      }
+    ]
+  },
+  "logstash": {
+    "available": true,
+    "pipelines": [
+      {
+        "pipeline_id": "main",
+        "state": "running",
+        "workers": 4,
+        "events_in": 128400,
+        "events_out": 128210,
+        "queue_events": 0,
+        "last_error": "",
+        "last_event_at": "2026-11-16T09:16:02+08:00"
+      },
+      {
+        "pipeline_id": "nginx-error",
+        "state": "failed",
+        "workers": 2,
+        "events_in": 18420,
+        "events_out": 17390,
+        "queue_events": 12800,
+        "last_error": "Elasticsearch rejected mapping: failed to parse field [error_type]",
+        "last_event_at": "2026-11-16T09:15:58+08:00"
+      },
+      {
+        "pipeline_id": "archive",
+        "state": "unavailable",
+        "workers": 0,
+        "events_in": 0,
+        "events_out": 0,
+        "queue_events": 0,
+        "last_error": "pipeline disabled by operator",
+        "last_event_at": ""
+      }
+    ]
+  }
+}

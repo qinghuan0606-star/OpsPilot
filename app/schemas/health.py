@@ -1,0 +1,36 @@
+"""Health and readiness response schemas."""
+
+from typing import Literal
+
+from pydantic import BaseModel, Field
+
+
+class LivenessResponse(BaseModel):
+    status: Literal["ok"] = "ok"
+
+
+class DependencyStatus(BaseModel):
+    name: str
+    ready: bool
+    detail: str = ""
+
+
+class ReadinessResponse(BaseModel):
+    ready: bool
+    dependencies: list[DependencyStatus] = Field(default_factory=list)
+
+
+class CapabilitiesResponse(BaseModel):
+    """Resolved runtime backends and whether the process is degraded."""
+
+    database: str
+    cache: str
+    vector_store: str
+    retriever: str
+    reranker: str
+    llm: str
+    degraded: bool
+    # Ops plane: what the tools actually talk to, and whether confirmations work.
+    ops_backend: str = "mock"
+    pending_store: str = "disabled"
+    hosts: int = 0

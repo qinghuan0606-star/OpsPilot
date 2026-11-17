@@ -1,0 +1,13 @@
+{
+  "name": "service_failure_logs",
+  "description": "服务启动失败：状态、退出码与 journal 日志联合定位，区分配置错误、依赖缺失与权限问题",
+  "triggers": ["启动失败", "起不来", "failed", "服务挂了", "启动报错", "FATAL"],
+  "tools": ["get_service_status", "get_service_logs"],
+  "steps": [
+    "查询服务状态、退出码与重启次数",
+    "读取最近日志并按级别筛出 emerg/err",
+    "对齐报错与依赖/配置线索",
+    "输出原因与验证方式，重启需人工确认"
+  ],
+  "notes": "日志不足时必须说明缺少日志，不得凭空归因"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "resource_check",
+  "description": "系统资源排查：CPU、内存、磁盘与 inode，先看使用率再看 TOP 进程",
+  "triggers": ["cpu 高", "内存不足", "磁盘满", "负载高", "iowait", "oom", "使用率"],
+  "tools": ["get_cpu_memory", "get_disk_usage"],
+  "steps": [
+    "采集 CPU/内存使用率与负载",
+    "采集文件系统使用率与 inode",
+    "结合业务判断是否达到容量阈值",
+    "给出扩容或清理建议，删除类操作需人工确认"
+  ],
+  "notes": "模拟环境数据仅用于演示，不能作为生产容量结论"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "rpm_upgrade_failure",
+  "description": "RPM 升级后服务异常：先确认包版本与依赖，再看服务状态和日志，最后给出修复建议",
+  "triggers": ["升级后", "升级了", "rpm 升级", "yum update", "依赖冲突", "不兼容", "装了新版本"],
+  "tools": ["get_rpm_info", "check_rpm_dependencies", "get_service_status", "get_service_logs"],
+  "steps": [
+    "确认目标包当前版本与安装时间",
+    "检查依赖是否满足、是否有旧模块残留",
+    "确认相关服务状态与退出码",
+    "读取服务日志定位加载失败原因",
+    "依据证据给出修复方向，变更需人工确认"
+  ],
+  "notes": "只读优先；不要建议未经验证的第三方仓库作为唯一方案"
+}

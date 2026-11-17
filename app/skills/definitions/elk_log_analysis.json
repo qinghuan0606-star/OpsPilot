@@ -1,0 +1,14 @@
+{
+  "name": "elk_log_analysis",
+  "description": "ELK 日志异常分析：先检索 Elasticsearch 原始 ERROR，再按错误类型聚合，需要时检查 Logstash Pipeline；本地 journal 不在此技能范围",
+  "triggers": ["elasticsearch", "elastic search", "elk", "logstash", "kibana", "es 日志", "应用日志", "大量 error", "错误日志"],
+  "tools": ["search_elasticsearch_logs", "aggregate_error_logs", "get_logstash_pipeline_status", "search_knowledge"],
+  "steps": [
+    "按索引、服务、级别与时间范围检索 Elasticsearch 原始日志",
+    "按错误类型/服务聚合错误次数、时间范围与典型消息",
+    "必要时检查 Logstash Pipeline 的采集与输出状态",
+    "把 ES 日志证据与知识库排查方法对齐，明确区分日志事实与推断",
+    "输出主要错误及需进一步核实的疑点，不把 Kibana 当作日志证据源"
+  ],
+  "notes": "ES 日志与本地 journal 是不同数据源；用户明确要求 ES 时不得静默改用 get_service_logs"
+}

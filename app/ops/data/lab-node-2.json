@@ -1,0 +1,202 @@
+{
+  "host_id": "lab-node-2",
+  "hostname": "lab-node-2",
+  "note": "模拟数据：麒麟 V10 SP3 实验节点，服务健康，用于对照组与依赖检查演示，不对应任何真实主机",
+  "labels": [
+    "kylin_v10",
+    "manual_fixture",
+    "simulated"
+  ],
+  "os": {
+    "name": "Kylin",
+    "version": "V10 SP3 (20240930)",
+    "kernel": "4.19.90-52.22.v2207.ky10.x86_64",
+    "arch": "x86_64",
+    "vendor": "Kylin Software"
+  },
+  "uptime": "up 23 days, 7:52",
+  "resources": {
+    "cpu": {
+      "cores": 8,
+      "load_1": 0.42,
+      "load_5": 0.51,
+      "load_15": 0.63,
+      "usage_pct": 21.6,
+      "iowait_pct": 0.8
+    },
+    "memory": {
+      "total_kb": 16318464,
+      "available_kb": 9123456,
+      "usage_pct": 44.1,
+      "swap_used_kb": 0
+    },
+    "top_processes": [
+      {
+        "pid": 902,
+        "user": "dockrem",
+        "name": "containerd",
+        "cpu_pct": 4.1,
+        "mem_pct": 2.2
+      },
+      {
+        "pid": 1210,
+        "user": "root",
+        "name": "sshd",
+        "cpu_pct": 0.2,
+        "mem_pct": 0.3
+      }
+    ]
+  },
+  "disks": [
+    {
+      "mount": "/",
+      "fs_type": "xfs",
+      "size_kb": 83886080,
+      "used_kb": 33554432,
+      "avail_kb": 50331648,
+      "use_pct": 40.0
+    },
+    {
+      "mount": "/data",
+      "fs_type": "xfs",
+      "size_kb": 209715200,
+      "used_kb": 188743680,
+      "avail_kb": 20971520,
+      "use_pct": 90.0
+    }
+  ],
+  "inode_use_pct": 8.4,
+  "packages": [
+    {
+      "name": "docker-ce",
+      "epoch": "3",
+      "version": "26.1.4",
+      "release": "1.ky10",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "Apache-2.0",
+      "vendor": "Kylin Software",
+      "install_time": "2026-09-02T14:22:00+08:00",
+      "requires": [
+        "containerd.io >= 1.6.24",
+        "iptables"
+      ],
+      "provides": [
+        "docker"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "26.1.4-1.ky10"
+      ]
+    },
+    {
+      "name": "openssl-libs",
+      "epoch": "1",
+      "version": "1.1.1",
+      "release": "31.p08.ky10",
+      "arch": "x86_64",
+      "state": "installed",
+      "license": "Apache-2.0",
+      "vendor": "Kylin Software",
+      "install_time": "2026-05-20T09:10:00+08:00",
+      "requires": [
+        "glibc >= 2.28"
+      ],
+      "provides": [
+        "libssl.so.1.1"
+      ],
+      "repo_id": "openEuler-24.03-LTS-SP1",
+      "repo_url": "https://repo.openeuler.org/openEuler-24.03-LTS-SP1/OS/x86_64/",
+      "available_versions": [
+        "1.1.1-31.p08.ky10"
+      ]
+    }
+  ],
+  "dependency_issues": {
+    "docker-ce": {
+      "missing": [],
+      "conflicts": [],
+      "satisfied": [
+        "containerd.io >= 1.6.24",
+        "iptables"
+      ],
+      "broken_by": [],
+      "stale_files": [],
+      "repo_available": true,
+      "note": "依赖完整，可正常升级"
+    }
+  },
+  "services": {
+    "docker": {
+      "manager": "systemd",
+      "state": "active",
+      "since": "2026-10-24T06:30:00+08:00",
+      "pid": 902,
+      "exit_code": 0,
+      "restart_count": 0,
+      "unit_path": "/usr/lib/systemd/system/docker.service",
+      "result": "success",
+      "last_error": "",
+      "enabled": true,
+      "last_start_at": "2026-10-24T06:30:00+08:00",
+      "last_failure_at": "",
+      "restart_events": [],
+      "stop_reason": "",
+      "exec_start": "",
+      "restart_policy": "",
+      "unit_config": {}
+    },
+    "sshd": {
+      "manager": "systemd",
+      "state": "active",
+      "since": "2026-10-24T06:01:00+08:00",
+      "pid": 1210,
+      "exit_code": 0,
+      "restart_count": 0,
+      "unit_path": "/usr/lib/systemd/system/sshd.service",
+      "result": "success",
+      "last_error": "",
+      "enabled": true,
+      "last_start_at": "2026-10-24T06:01:00+08:00",
+      "last_failure_at": "",
+      "restart_events": [],
+      "stop_reason": "",
+      "exec_start": "",
+      "restart_policy": "",
+      "unit_config": {}
+    }
+  },
+  "logs": {
+    "docker": [
+      {
+        "ts": "2026-11-16T07:00:12+08:00",
+        "level": "info",
+        "unit": "dockerd",
+        "pid": 902,
+        "msg": "Container runtime initialized, api listen on /run/docker.sock"
+      }
+    ],
+    "sshd": [
+      {
+        "ts": "2026-11-16T06:45:00+08:00",
+        "level": "info",
+        "unit": "sshd",
+        "pid": 1210,
+        "msg": "Accepted publickey for ops from 10.0.0.0 port 52210"
+      }
+    ]
+  },
+  "elasticsearch": {
+    "available": false,
+    "cluster": "ops-lab-es",
+    "endpoint": "",
+    "documents": [],
+    "note": "mock: ES 未在 lab-node-2 部署"
+  },
+  "logstash": {
+    "available": false,
+    "pipelines": [],
+    "note": "mock: Logstash 未在 lab-node-2 部署"
+  }
+}
